@@ -46,7 +46,7 @@ jobs:
           gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-bucket/flight-booking-analysis/spark-job/
 
       # Sync Airflow DAG to Airflow DEV Composer
-      - name: Upload Airflow DAG to DEV
+      - name: Upload Airflow DAG to DEV Environment (Dag Folder)
         run: |
           gcloud composer environments storage dags import \
             --environment airflow-dev \
@@ -92,7 +92,7 @@ jobs:
           gsutil cp spark_job/spark_transformation_job.py gs://airflow-projects-bucket/flight-booking-analysis/spark-job/
 
       # Sync Airflow DAG to Airflow PROD Composer
-      - name: Upload Airflow DAG to PROD
+      - name: Upload Airflow DAG to PROD Environment (Dag Folder)
         run: |
           gcloud composer environments storage dags import \
             --environment airflow-prod \
